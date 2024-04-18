@@ -21,20 +21,32 @@ All tool version definitions are contained within one file (`.tool-versions`[^to
 
 - For each of the projects, e.g. `node-19`, `node-20`
 
-  - Install **asdf plugins**[^asdf-plugins] for tools defined in `.tool-versions`
+  - "Install" **asdf plugins**[^asdf-plugins] for tools defined in `.tool-versions`
 
     ```bash
     cat .tool-versions | awk '{print $1}' | xargs -I _ asdf plugin add _
     ```
 
+    > [!IMPORTANT]
+    > You need to "install" plugin for a tool, before using `asdf` to install a version of that tool.
+    >
+    > e.g.
+    >
+    > ```bash
+    > asdf plugin add node
+    > ```
+
     > [!TIP]
     > Plugins are how `asdf` knows to handle different tools like Node.js, Ruby, ...
 
-- Install [**tool _versions_**][^tool-versions] defined in `.tool-versions`
+- For each of the tool, install the [**_version_**][tool-versions] defined in `.tool-versions`
 
   ```bash
   asdf install
   ```
+
+  > [!TIP]
+  > In `asdf` words, it's "Install all the **_package_ versions** listed in the .tool-versions file"
 
 - Confirm that for each project, the correct version of tool is invoked
 
@@ -57,10 +69,16 @@ All tool version definitions are contained within one file (`.tool-versions`[^to
   cd kubectl-1.29.4
   kubectl version # Client Version: v1.29.4
   ```
+
+> [!CAUTION]
+> A completions that match a version of a tool is still an unsolved problem[^1].
+
+[tool-versions]: https://asdf-vm.com/manage/versions.html
+
 [^asdf-homepage]: <https://asdf-vm.com/>
 [^asdf-guide]: <https://asdf-vm.com/guide/getting-started.html>
 [^asdf-core]: <https://asdf-vm.com/manage/core.html>
 [^asdf-plugins]: <https://asdf-vm.com/manage/plugins.html>
-[^tool-versions]: <https://asdf-vm.com/manage/versions.html>
 [^asdf-community]: <https://github.com/asdf-community>
 [^tool-versions-file]: <https://asdf-vm.com/manage/configuration.html#tool-versions>
+[^1]: Support command completions from installed tools - [Issue #752](https://github.com/asdf-vm/asdf/issues/752)
