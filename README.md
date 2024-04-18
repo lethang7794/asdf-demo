@@ -48,6 +48,15 @@ All tool version definitions are contained within one file (`.tool-versions`[^to
   node -v # Should be v20.0.0
   ```
 
+  ```bash
+  cd kubectl-1.28.3
+  kubectl version # Client Version: v1.28.3
+  ```
+
+  ```bash
+  cd kubectl-1.29.4
+  kubectl version # Client Version: v1.29.4
+  ```
 [^asdf-homepage]: <https://asdf-vm.com/>
 [^asdf-guide]: <https://asdf-vm.com/guide/getting-started.html>
 [^asdf-core]: <https://asdf-vm.com/manage/core.html>
