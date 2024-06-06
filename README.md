@@ -52,22 +52,16 @@ All tool version definitions are contained within one file (`.tool-versions`[^to
 
   ```bash
   cd node-19
-  node -v # Should be v19.0.0
-  ```
-
-  ```bash
-  cd node-20
-  node -v # Should be v20.0.0
+  node -v       # Should be v19.0.0
+  cd ../node-20 #
+  node -v       # Should be v20.0.0
   ```
 
   ```bash
   cd kubectl-1.28.3
-  kubectl version # Client Version: v1.28.3
-  ```
-
-  ```bash
-  cd kubectl-1.29.4
-  kubectl version # Client Version: v1.29.4
+  kubectl version      # Client Version: v1.28.3
+  cd ../kubectl-1.29.4 #
+  kubectl version      # Client Version: v1.29.4
   ```
 
 > [!CAUTION]
