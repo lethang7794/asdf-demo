@@ -19,34 +19,36 @@ All tool version definitions are contained within one file (`.tool-versions`[^to
 
 - Install **asdf core**[^asdf-core]: official guide[^asdf-guide]
 
-- For each of the projects, e.g. `node-19`, `node-20`
+- Install asdf plugins & the tools for each project
 
-  - "Install" **asdf plugins**[^asdf-plugins] for tools defined in `.tool-versions`
+  - For each of the projects, e.g. `node-19`, `node-20`
 
-    ```bash
-    cat .tool-versions | awk '{print $1}' | xargs -I _ asdf plugin add _
-    ```
+    - "Install" **asdf plugins**[^asdf-plugins] for tools defined in `.tool-versions`
 
-    > [!IMPORTANT]
-    > You need to "install" plugin for a tool, before using `asdf` to install a version of that tool.
-    >
-    > e.g.
-    >
-    > ```bash
-    > asdf plugin add node
-    > ```
+      ```bash
+      cat .tool-versions | awk '{print $1}' | xargs -I _ asdf plugin add _
+      ```
 
-    > [!TIP]
-    > Plugins are how `asdf` knows to handle different tools like Node.js, Ruby, ...
+      > [!IMPORTANT]
+      > You need to "install" plugin for a tool, before using `asdf` to install a version of that tool.
+      >
+      > e.g.
+      >
+      > ```bash
+      > asdf plugin add node
+      > ```
 
-- For each of the tool, install the [**_version_**][tool-versions] defined in `.tool-versions`
+      > [!TIP]
+      > Plugins are how `asdf` knows to handle different tools like Node.js, Ruby, ...
+
+  - For each of the tool, install the [**_version_**][tool-versions] defined in `.tool-versions`
 
   ```bash
   asdf install
   ```
 
   > [!TIP]
-  > In `asdf` words, it's "Install all the **_package_ versions** listed in the .tool-versions file"
+  > In `asdf` words, `asdf install` "Installs all the **_package_ versions** listed in the `.tool-versions` file"
 
 - Confirm that for each project, the correct version of tool is invoked
 
